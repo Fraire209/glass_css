@@ -55,3 +55,15 @@ buttons.forEach(btn => {
     }, 2000);
   });
 });
+
+//********************************************************** Border animation ************************************************* */
+const panel2 = document.querySelector('.glass-panel-danger');
+let angle = 0;
+
+function animateGradient() {
+  angle += 1; // degrees per frame
+  panel2.style.setProperty('--angle', `${angle}deg`);
+  requestAnimationFrame(animateGradient);
+}
+
+animateGradient();
