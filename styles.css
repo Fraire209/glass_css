@@ -1,36 +1,57 @@
 html, body {
-    height: 100%;
-    margin: 0;
-   overflow-y: auto;
+  height: 100%;
+  margin: 0;
+  overflow-y: auto;
 }
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 400; 
+  color: white; 
+}
+
+h1, h2, h3 {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 700; 
+  line-height: 1.2;
+  margin-top: 0.8em;
+  margin-bottom: 0.4em;
+  color: white; 
+}
+
+
+p, button {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 1em;
+  color: white; 
+}
+
 
 .background-layer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 0;
-    transition: opacity 0.5s ease-in-out; 
-    opacity: 1; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transition: opacity 0.5s ease-in-out; 
+  opacity: 1; 
 }
 
-.banners-section {
-  background: url('./images/light_blue_color_ice_4k_5k_hd_light_blue-3840x2160.jpg') center/cover no-repeat;
-
+.banners-section{
+  background: #d4edfc;
+  background: linear-gradient(279deg, rgba(212, 237, 252, 1) 0%, rgba(235, 252, 251, 1) 47%, rgba(217, 255, 240, 1) 100%);
 }
-
 
 .fixed-content {
-    position: relative; 
-    z-index: 10;
+  position: relative; 
+  z-index: 10;
 }
 
-p {
-    color: white; 
-}
 
 /* --------------------------------------- GLASS PANEL -------------------------------------------- */
 .glass-panel {
@@ -81,6 +102,7 @@ p {
   backdrop-filter: blur(12.7px);
   -webkit-backdrop-filter: blur(12.7px);
   position: relative;
+  z-index: 0;
   overflow: hidden;
 }
 .glass-panel-frosted::before {
@@ -124,8 +146,6 @@ p {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-
-
   padding: 1px; 
   background: linear-gradient(
     to bottom right,
@@ -184,8 +204,8 @@ p {
   z-index: 1;
 }
 
-/* -------------------------------------- GLASS DANGER PANEL ----------------------------------------------- */
-.glass-panel-danger{
+/* -------------------------------------- TINTED GLASS DANGER PANEL ----------------------------------------------- */
+.glass-panel-tinted-danger{
   background: rgba(217, 64, 64, 0.5);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -195,7 +215,7 @@ p {
   overflow: hidden;
 }
 
-.glass-panel-danger::before {
+.glass-panel-tinted-danger::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -220,8 +240,8 @@ p {
   z-index: 1;
 }
 
-/* -------------------------------------- GLASS WARNING PANEL ---------------------------------------------- */
-.glass-panel-warning{
+/* -------------------------------------- TINTED GLASS WARNING PANEL ---------------------------------------------- */
+.glass-panel-tinted-warning{
   background: rgba(217, 173, 64, 0.5);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -231,7 +251,7 @@ p {
   overflow: hidden;
 }
 
-.glass-panel-warning::before {
+.glass-panel-tinted-warning::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -255,8 +275,8 @@ p {
   z-index: 1;
 }
 
-/* -------------------------------------- GLASS INFO PANEL ------------------------------------------------- */
-.glass-panel-info{
+/* -------------------------------------- TINTED GLASS INFO PANEL ------------------------------------------------- */
+.glass-panel-tinted-info{
   background: rgba(64, 86, 217, 0.5);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -266,7 +286,7 @@ p {
   overflow: hidden;
 }
 
-.glass-panel-info::before {
+.glass-panel-tinted-info::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -291,8 +311,8 @@ p {
   z-index: 1;
 }
 
-/* ------------------------------------- GLASS SUCCESS PANEL ------------------------------------------------------ */
-.glass-panel-success{
+/* ------------------------------------- TINTED GLASS SUCCESS PANEL ------------------------------------------------------ */
+.glass-panel-tinted-success{
   background: rgba(41, 147, 25, 0.6);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -302,7 +322,7 @@ p {
   overflow: hidden;
 }
 
-.glass-panel-success::before {
+.glass-panel-tinted-success::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -326,44 +346,8 @@ p {
   z-index: 1;
 }
 
-/* -------------------------------------- FROSTED GLASS INFO PANEL ------------------------------------------------- */
-.glass-panel-info-frosted{
-  background: rgba(64, 86, 217, 0.79);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4.3px);
-  -webkit-backdrop-filter: blur(4.3px);
-  position: relative;
-  overflow: hidden;
-}
-
-.glass-panel-info-frosted::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(
-    to bottom right,
-    rgba(173, 187, 255, 1) 0%,
-    rgba(64, 86, 217, 0.55) 45%,
-    rgba(64, 86, 217, 0.85) 55%,
-    rgba(173, 187, 255, 1) 100%
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* -------------------------------------- FROSTED GLASS WARNING PANEL ------------------------------------------------- */
-.glass-panel-warning-frosted{
+/* -------------------------------------- FROSTED TINTED TINTED GLASS WARNING PANEL ------------------------------------------------- */
+.glass-panel-tinted-warning-frosted{
   background: rgba(217, 173, 64, 0.79);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -373,7 +357,7 @@ p {
   overflow: hidden;
 }
 
-.glass-panel-warning-frosted::before {
+.glass-panel-tinted-warning-frosted::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -397,8 +381,43 @@ p {
   z-index: 1;
 }
 
-/* -------------------------------------- FROSTED GLASS DANGER PANEL ------------------------------------------------- */
-.glass-panel-danger-frosted{
+/* -------------------------------------- FROSTED TINTED GLASS INFO PANEL ------------------------------------------------- */
+.glass-panel-tinted-info-frosted{
+  background: rgba(64, 86, 217, 0.79);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.3px);
+  -webkit-backdrop-filter: blur(4.3px);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel-tinted-info-frosted::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    to bottom right,
+    rgba(173, 187, 255, 1) 0%,
+    rgba(64, 86, 217, 0.55) 45%,
+    rgba(64, 86, 217, 0.85) 55%,
+    rgba(173, 187, 255, 1) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+/* -------------------------------------- FROSTED TINTED GLASS DANGER PANEL ------------------------------------------------- */
+.glass-panel-tinted-danger-frosted{
   background: rgba(217, 64, 64, 0.69);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -408,7 +427,7 @@ p {
   overflow: hidden;
 }
 
-.glass-panel-danger-frosted::before {
+.glass-panel-tinted-danger-frosted::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -433,8 +452,8 @@ p {
   z-index: 1;
 }
 
-/* -------------------------------------- FROSTED GLASS SUCCESS PANEL -------------------------------- */
-.glass-panel-success-frosted{
+/* -------------------------------------- FROSTED TINTED GLASS SUCCESS PANEL -------------------------------- */
+.glass-panel-tinted-success-frosted{
   background: rgba(41, 147, 25, 0.75);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -444,7 +463,7 @@ p {
   overflow: hidden;
 }
 
-.glass-panel-success-frosted::before {
+.glass-panel-tinted-success-frosted::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -467,141 +486,751 @@ p {
   pointer-events: none;
   z-index: 1;
 }
+
+/* --------------------------------------  DANGER GLASS PANEL ----------------------------------------- */
+.glass-panel-danger{
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16.2px);
+  -webkit-backdrop-filter: blur(16.2px);
+  z-index: 0;
+  overflow: hidden; 
+}
+
+.glass-panel-danger::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.75px; 
+  background: linear-gradient(
+    to bottom right,
+    rgb(242, 4, 4) 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(255, 255, 255, 0.05) 55%,
+    rgb(242, 4, 4) 100%
+  );
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------  WARNING GLASS PANEL ----------------------------------------- */
+.glass-panel-warning{
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16.2px);
+  -webkit-backdrop-filter: blur(16.2px);
+  z-index: 0;
+  overflow: hidden;
+}
+
+.glass-panel-warning::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.75px; 
+  background: linear-gradient(
+    to bottom right,
+    rgb(247, 184, 26) 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(255, 255, 255, 0.05) 55%,
+    rgba(247, 184, 26) 100%
+  );
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------  INFO GLASS PANEL ----------------------------------------- */
+.glass-panel-info{
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16.2px);
+  -webkit-backdrop-filter: blur(16.2px);
+  z-index: 0;
+  overflow: hidden;
+}
+
+.glass-panel-info::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.75px; 
+  background: linear-gradient(
+    to bottom right,
+    rgb(17, 9, 236) 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(255, 255, 255, 0.05) 55%,
+    rgba(17, 9, 236) 100%
+  );
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------  SUCCESS GLASS PANEL ----------------------------------------- */
+.glass-panel-success{
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16.2px);
+  -webkit-backdrop-filter: blur(16.2px);
+  z-index: 0;
+  overflow: hidden;
+}
+
+.glass-panel-success::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.75px; 
+  background: linear-gradient(
+    to bottom right,
+    rgb(7, 182, 1) 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(255, 255, 255, 0.05) 55%,
+    rgba(7, 182, 1) 100%
+  );
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------  DANGER FROSTED GLASS PANEL ----------------------------------------- */
+.glass-panel-danger-frosted{
+  background: rgba(255, 255, 255, 0.48);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.7px);
+  -webkit-backdrop-filter: blur(12.7px);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel-danger-frosted::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.75px; 
+  background: linear-gradient(
+    to bottom right,
+    rgb(242, 4, 4) 0%,
+    rgba(255, 255, 255, 0.38) 40%,
+    rgba(255, 255, 255, 0.58) 60%,
+    rgb(242, 4, 4) 100%
+  );
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------  WARNING FROSTED GLASS PANEL ----------------------------------------- */
+.glass-panel-warning-frosted{
+  background: rgba(255, 255, 255, 0.48);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.7px);
+  -webkit-backdrop-filter: blur(12.7px);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel-warning-frosted::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.75px; 
+  background: linear-gradient(
+    to bottom right,
+    rgb(247, 184, 26) 0%,
+    rgba(255, 255, 255, 0.38) 40%,
+    rgba(255, 255, 255, 0.58) 60%,
+    rgba(247, 184, 26) 100%
+  );
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------  INFO FROSTED GLASS PANEL ----------------------------------------- */
+.glass-panel-info-frosted{
+  background: rgba(255, 255, 255, 0.48);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.7px);
+  -webkit-backdrop-filter: blur(12.7px);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel-info-frosted::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.75px; 
+  background: linear-gradient(
+    to bottom right,
+    rgb(17, 9, 236) 0%,
+    rgba(255, 255, 255, 0.38) 40%,
+    rgba(255, 255, 255, 0.58) 60%,
+    rgba(17, 9, 236) 100%
+  );
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------  SUCCESS FROSTED GLASS PANEL ----------------------------------------- */
+.glass-panel-success-frosted{
+  background: rgba(255, 255, 255, 0.48);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.7px);
+  -webkit-backdrop-filter: blur(12.7px);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel-success-frosted::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.75px; 
+  background: linear-gradient(
+    to bottom right,
+    rgb(7, 182, 1) 0%,
+    rgba(255, 255, 255, 0.38) 40%,
+    rgba(255, 255, 255, 0.58) 60%,
+    rgba(7, 182, 1) 100%
+  );
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 1;
+}
+/* --------------------------------------  DANGER BLACK GLASS PANEL ----------------------------------------- */
+.glass-panel-danger-black{
+  background: rgba(20, 20, 20, 0.38);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  z-index: 0;
+  overflow: hidden; 
+  position: relative;
+}
+
+.glass-panel-danger-black::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.75px; 
+  background: linear-gradient(
+    to bottom right,
+    rgb(242, 4, 4) 0%,
+    rgba(20, 20, 20, 0.35) 45%,
+    rgba(20, 20, 20, 0.65) 55%,
+    rgb(242, 4, 4) 100%
+  );
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------  WARNING BLACK GLASS PANEL ----------------------------------------- */
+.glass-panel-warning-black{
+  background: rgba(20, 20, 20, 0.38);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  z-index: 0;
+  overflow: hidden; 
+  position: relative;
+}
+
+.glass-panel-warning-black::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.75px; 
+  background: linear-gradient(
+    to bottom right,
+    rgb(247, 184, 26) 0%,
+    rgba(20, 20, 20, 0.35) 45%,
+    rgba(20, 20, 20, 0.65) 55%,
+    rgba(247, 184, 26) 100%
+  );
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------  INFO BLACK GLASS PANEL ----------------------------------------- */
+.glass-panel-info-black{
+  background: rgba(20, 20, 20, 0.38);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  z-index: 0;
+  overflow: hidden; 
+  position: relative;
+}
+
+.glass-panel-info-black::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.75px; 
+  background: linear-gradient(
+    to bottom right,
+    rgb(17, 9, 236) 0%,
+    rgba(20, 20, 20, 0.35) 45%,
+    rgba(20, 20, 20, 0.65) 55%,
+    rgba(17, 9, 236) 100%
+  );
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------  SUCCESS BLACK GLASS PANEL ----------------------------------------- */
+.glass-panel-success-black{
+  background: rgba(20, 20, 20, 0.38);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  z-index: 0;
+  overflow: hidden; 
+  position: relative;
+}
+
+.glass-panel-success-black::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.75px; 
+  background: linear-gradient(
+    to bottom right,
+    rgb(7, 182, 1) 0%,
+    rgba(20, 20, 20, 0.35) 45%,
+    rgba(20, 20, 20, 0.65) 55%,
+    rgba(7, 182, 1) 100%
+  );
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------  DANGER DIRTY GLASS PANEL ----------------------------------------- */
+.glass-panel-danger-dirty{
+  background: rgba(139, 128, 128, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel-danger-dirty::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.75px; 
+  background: linear-gradient(
+    to bottom right,
+    rgb(242, 4, 4) 0%,
+    rgba(139, 128, 128, 0.5) 45%,
+    rgba(139, 128, 128, 0.5) 55%,
+    rgb(242, 4, 4) 100%
+  );
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------  WARNING DIRTY GLASS PANEL ----------------------------------------- */
+.glass-panel-warning-dirty{
+  background: rgba(139, 128, 128, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel-warning-dirty::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.75px; 
+  background: linear-gradient(
+    to bottom right,
+    rgb(247, 184, 26) 0%,
+    rgba(139, 128, 128, 0.5) 45%,
+    rgba(139, 128, 128, 0.5) 55%,
+    rgba(247, 184, 26) 100%
+  );
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------  INFO DIRTY GLASS PANEL ----------------------------------------- */
+.glass-panel-info-dirty{
+  background: rgba(139, 128, 128, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel-info-dirty::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.75px; 
+  background: linear-gradient(
+    to bottom right,
+    rgb(17, 9, 236) 0%,
+    rgba(139, 128, 128, 0.5) 45%,
+    rgba(139, 128, 128, 0.5) 55%,
+    rgba(17, 9, 236) 100%
+  );
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------  SUCCESS DIRTY GLASS PANEL ----------------------------------------- */
+.glass-panel-success-dirty{
+  background: rgba(139, 128, 128, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel-success-dirty::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.75px; 
+  background: linear-gradient(
+    to bottom right,
+    rgb(7, 182, 1) 0%,
+    rgba(139, 128, 128, 0.5) 45%,
+    rgba(139, 128, 128, 0.5) 55%,
+    rgba(7, 182, 1) 100%
+  );
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 1;
+}
 /* -------------------------------------- GLASS BUTTONS ---------------------------------------------- */
 .btn-glass-primary{
-    background: rgba(255, 255, 255, 0.18);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    color: white;
-    padding: 0.25rem 0.5rem;
-    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
-    transform-origin: center;
-    --btn-hover-bg: rgba(255, 255, 255, 0.32);
-    --btn-hover-border: rgba(255, 255, 255, 0.9);
-    --btn-hover-shadow: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 0.25rem 0.5rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+  transform-origin: center;
+  --btn-hover-bg: rgba(255, 255, 255, 0.32);
+  --btn-hover-border: rgba(255, 255, 255, 0.9);
+  --btn-hover-shadow: rgba(255, 255, 255, 0.25);
 }
 
 .btn-glass-primary:hover {
   background: var(--btn-hover-bg);
   border-color: var(--btn-hover-border);
   box-shadow: 0 0 0 1px var(--btn-hover-border), 0 12px 45px var(--btn-hover-shadow);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   transform: translateY(-2px);
 }
 .btn-glass-secondary{
-    background: rgba(255, 255, 255, 0.133);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(16.2px);
-    -webkit-backdrop-filter: blur(16.2px);
-    border: 2px solid rgba(255, 255, 255, 0.49);
-    color: white;
-    padding: 0.25rem 0.5rem;
-    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
-    transform-origin: center;
-    --btn-hover-bg: rgba(255, 255, 255, 0.32);
-    --btn-hover-border: rgba(255, 255, 255, 0.9);
-    --btn-hover-shadow: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.133);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16.2px);
+  -webkit-backdrop-filter: blur(16.2px);
+  border: 2px solid rgba(255, 255, 255, 0.49);
+  padding: 0.25rem 0.5rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+  transform-origin: center;
+  --btn-hover-bg: rgba(255, 255, 255, 0.32);
+  --btn-hover-border: rgba(255, 255, 255, 0.9);
+  --btn-hover-shadow: rgba(255, 255, 255, 0.25);
 }
 
 .btn-glass-secondary:hover {
   background: var(--btn-hover-bg); 
   border-color: var(--btn-hover-border);
   box-shadow: 0 0 0 1px var(--btn-hover-border), 0 12px 45px var(--btn-hover-shadow); 
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   transform: translateY(-2px);
 }
 
 .btn-glass-primary-frosted {
-    position: relative;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.233); 
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(11.2px);
-    -webkit-backdrop-filter: blur(11.2px);
-    border: 1px solid rgba(255, 255, 255, 0.24);
-    color: white;
-    padding: 0.25rem 0.5rem;
-    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
-    transform-origin: center;
-    z-index: 1; 
-    --btn-hover-bg: rgba(255, 255, 255, 0.38);
-    --btn-hover-border: rgba(255, 255, 255, 0.85);
-    --btn-hover-shadow: rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.233); 
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.2px);
+  -webkit-backdrop-filter: blur(11.2px);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 0.25rem 0.5rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+  transform-origin: center;
+  z-index: 1; 
+  --btn-hover-bg: rgba(255, 255, 255, 0.38);
+  --btn-hover-border: rgba(255, 255, 255, 0.85);
+  --btn-hover-shadow: rgba(255, 255, 255, 0.3);
 }
 
 
 .btn-glass-primary-frosted::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0); 
-    border-radius: inherit;
-    transition: background 0.3s ease;
-    z-index: -1; 
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0); 
+  border-radius: inherit;
+  transition: background 0.3s ease;
+  z-index: -1; 
 }
 
 
 .btn-glass-primary-frosted:hover {
-    background: var(--btn-hover-bg); 
-    border-color: var(--btn-hover-border);
-    box-shadow: 0 0 0 1px var(--btn-hover-border), 0 12px 45px var(--btn-hover-shadow);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    transform: translateY(-2px);
+  background: var(--btn-hover-bg); 
+  border-color: var(--btn-hover-border);
+  box-shadow: 0 0 0 1px var(--btn-hover-border), 0 12px 45px var(--btn-hover-shadow);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transform: translateY(-2px);
 }
 
 .btn-glass-primary-frosted:hover::after {
-    background: rgba(0, 0, 0, 0.15); 
+  background: rgba(0, 0, 0, 0.15); 
 }
 
 .btn-glass-secondary-frosted {
-    background: rgba(174, 168, 168, 0.59);        
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border: 2px solid rgba(255, 255, 255, 0.35); 
-    color: white;
-    padding: 0.25rem 0.5rem;
-    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
-    transform-origin: center;
-    --btn-hover-bg: rgba(255, 255, 255, 0.32);
-    --btn-hover-border: rgba(255, 255, 255, 0.9);
-    --btn-hover-shadow: rgba(255, 255, 255, 0.25);
+  background: rgba(174, 168, 168, 0.59);        
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 2px solid rgba(255, 255, 255, 0.35); 
+  padding: 0.25rem 0.5rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+  transform-origin: center;
+  --btn-hover-bg: rgba(255, 255, 255, 0.32);
+  --btn-hover-border: rgba(255, 255, 255, 0.9);
+  --btn-hover-shadow: rgba(255, 255, 255, 0.25);
 }
 
 .btn-glass-secondary-frosted:hover {
-    background: var(--btn-hover-bg);
-    border-color: var(--btn-hover-border);
-    box-shadow: 0 0 0 1px var(--btn-hover-border), 0 12px 45px var(--btn-hover-shadow);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    transform: translateY(-2px);
+  background: var(--btn-hover-bg);
+  border-color: var(--btn-hover-border);
+  box-shadow: 0 0 0 1px var(--btn-hover-border), 0 12px 45px var(--btn-hover-shadow);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transform: translateY(-2px);
 }
 
 /* ------------------------------- PRIMARY BUTTON ERISA COLORS  ----------------------------------- */
 
 .btn-glass-eg{
-    background: rgba(61, 159, 68, 0.619);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(9.8px);
-    -webkit-backdrop-filter: blur(9.8px);
-    border: 2px solid rgba(60, 156, 67, 0.49);
-    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
-    transform-origin: center;
-    color: white;
-    padding: 0.25rem 0.5rem;
-    --btn-hover-bg: rgba(61, 159, 68, 0.85);
-    --btn-hover-border: rgba(173, 255, 151, 0.85);
-    --btn-hover-shadow: rgba(61, 159, 68, 0.35);
+  background: rgba(61, 159, 68, 0.619);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.8px);
+  -webkit-backdrop-filter: blur(9.8px);
+  border: 1px solid rgba(60, 156, 67, 0.49);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+  transform-origin: center;
+  padding: 0.25rem 0.5rem;
+  --btn-hover-bg: rgba(61, 159, 68, 0.85);
+  --btn-hover-border: rgba(173, 255, 151, 0.85);
+  --btn-hover-shadow: rgba(61, 159, 68, 0.35);
 }
 
 .btn-glass-eb{
@@ -610,10 +1239,9 @@ p {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(11.2px);
   -webkit-backdrop-filter: blur(11.2px);
-  border: 2px solid rgba(20, 63, 221, 0.24);
+  border: 1px solid rgba(20, 63, 221, 0.24);
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
   transform-origin: center;
-  color: white;
   padding: 0.25rem 0.5rem;
   --btn-hover-bg: rgba(20, 63, 221, 0.85);
   --btn-hover-border: rgba(151, 168, 255, 0.85);
@@ -624,26 +1252,25 @@ p {
 .btn-glass-eb:hover {
   background: var(--btn-hover-bg);
   border-color: var(--btn-hover-border);
-  box-shadow: 0 12px 45px var(--btn-hover-shadow);
-  backdrop-filter: blur(16px); 
-  -webkit-backdrop-filter: blur(16px);
-  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 0 1px var(--btn-hover-border), 0 12px 45px var(--btn-hover-shadow);
+  backdrop-filter: blur(15px); 
+  -webkit-backdrop-filter: blur(15px);
+  transform: translateY(-2px);
 }
 
 .btn-glass-eg-frosted{
-    background: rgba(54, 164, 50, 0.81);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.1px);
-    -webkit-backdrop-filter: blur(3.1px);
-    border: 1px solid rgba(54, 164, 50, 0.24);
-    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
-    transform-origin: center;
-    color: white;
-    padding: 0.25rem 0.5rem;
-    --btn-hover-bg: rgba(54, 164, 50, 0.95);
-    --btn-hover-border: rgba(173, 255, 151, 0.85);
-    --btn-hover-shadow: rgba(54, 164, 50, 0.35);
+  background: rgba(54, 164, 50, 0.81);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.1px);
+  -webkit-backdrop-filter: blur(3.1px);
+  border: 1px solid rgba(54, 164, 50, 0.24);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+  transform-origin: center;
+  padding: 0.25rem 0.5rem;
+  --btn-hover-bg: rgba(54, 164, 50, 0.95);
+  --btn-hover-border: rgba(173, 255, 151, 0.85);
+  --btn-hover-shadow: rgba(54, 164, 50, 0.35);
 }
 
 .btn-glass-eb-frosted{
@@ -655,7 +1282,6 @@ p {
   border: 1px solid rgba(58, 94, 232, 0.24);
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
   transform-origin: center;
-  color: white;
   padding: 0.25rem 0.5rem;
   --btn-hover-bg: rgba(58, 94, 232, 0.95);
   --btn-hover-border: rgba(151, 168, 255, 0.85);
@@ -667,8 +1293,8 @@ p {
   background: var(--btn-hover-bg);
   border-color: var(--btn-hover-border);
   box-shadow: 0 0 0 1px var(--btn-hover-border), 0 12px 45px var(--btn-hover-shadow);
-  backdrop-filter: blur(12px);     
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(15px);     
+  -webkit-backdrop-filter: blur(15px);
   transform: translateY(-2px);
 }
 
@@ -684,7 +1310,6 @@ p {
   padding: 0.25rem 0.5rem;
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
   transform-origin: center;
-  color: white;
   --btn-hover-bg: rgba(255, 10, 10, 0.8);
   --btn-hover-border: rgba(255, 200, 200, 0.85);
   --btn-hover-shadow: rgba(255, 10, 10, 0.35);
@@ -693,8 +1318,8 @@ p {
   background: var(--btn-hover-bg); 
   border-color: var(--btn-hover-border);
   box-shadow: 0 0 0 1px var(--btn-hover-border), 0 12px 45px var(--btn-hover-shadow);
-  backdrop-filter: blur(14px); 
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(15px); 
+  -webkit-backdrop-filter: blur(15px);
   transform: translateY(-2px);
 }
 
@@ -708,7 +1333,6 @@ p {
   padding: 0.25rem 0.5rem;
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
   transform-origin: center;
-  color: white;
   --btn-hover-bg: rgba(255, 30, 30, 0.95);
   --btn-hover-border: rgba(255, 200, 200, 0.9);
   --btn-hover-shadow: rgba(255, 30, 30, 0.35);
@@ -718,8 +1342,8 @@ p {
   background: var(--btn-hover-bg); 
   border-color: var(--btn-hover-border);
   box-shadow: 0 0 0 1px var(--btn-hover-border), 0 12px 45px var(--btn-hover-shadow);
-  backdrop-filter: blur(14px);     
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(15px);     
+  -webkit-backdrop-filter: blur(15px);
   transform: translateY(-2px);
 }
 
@@ -741,32 +1365,68 @@ p {
   color: rgb(26, 78, 12);
 }
 
-/* ---------------------------------------- DROP DOWN DEMO ---------------------------------------- */
-.drop-down-loop {
-  opacity: 0;
-  transform: translateY(-50px); 
-  animation: dropLoop 6s ease-in-out infinite; 
+.dark-danger-text{
+  color: rgb(195, 0, 0);
 }
 
-@keyframes dropLoop {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  10% {
-    opacity: 1;
-    transform: translateY(0); 
-  }
-  76.66% {
-    opacity: 1;
-    transform: translateY(0); 
-  }
-  83.33% {
-    opacity: 0;
-    transform: translateY(-50px); 
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-50px); 
-  }
+.dark-warning-text{
+  color: rgb(248, 190, 31);
+}
+
+.dark-info-text{
+  color: rgb(17, 9, 236);
+}
+
+.dark-success-text{
+  color: rgb(12, 189, 6);
+}
+
+.dirty-text{
+  color: rgba(84, 78, 78, 0.942);
+}
+
+/* ---------------------------------------- DROP DOWN DEMO ---------------------------------------- */
+.drop-down-loop {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.drop-down-loop.hidden {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+
+/* -------------------------------------------- SVG ICONS --------------------------------------------------- */
+.icon-error {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background: no-repeat center/contain
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='rgb(195, 0, 0)' class='size-6'><path stroke-linecap='round' stroke-linejoin='round' d='m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z'/></svg>");
+}
+
+.icon-warning{
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background: no-repeat center/contain
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='rgb(248,190,31)'><path stroke-linecap='round' stroke-linejoin='round' d='M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z'/></svg>");
+}
+
+.icon-info {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background: no-repeat center/contain
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='rgb(17, 9, 236)' class='size-6'><path stroke-linecap='round' stroke-linejoin='round' d='M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z'/></svg>");
+}
+
+.icon-success {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background: no-repeat center/contain
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='rgb(30, 154, 18)' class='size-6'><path stroke-linecap='round' stroke-linejoin='round' d='M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z'/></svg>");
 }

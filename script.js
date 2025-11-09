@@ -31,5 +31,27 @@ function nextBackground() {
 bgLayer.style.backgroundImage = `url('${images[0]}')`;
 index = 1;
 
-// change every 10 seconds
+//change every 10 seconds
 setInterval(nextBackground, displayTime);
+
+// ************************************************************ Banner animation demo **************************************************
+const panel = document.getElementById("panel");
+const buttons = document.querySelectorAll(".dismissBtn");
+
+// Fade downward on initial render after half a second to make sure it is visible on page load
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    panel.classList.remove("hidden"); // triggers fade-down
+  }, 500); 
+});
+
+// Button logic
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    panel.classList.add("hidden"); // fade up
+
+    setTimeout(() => {
+      panel.classList.remove("hidden"); // fade back down after 2s
+    }, 2000);
+  });
+});
