@@ -35,34 +35,47 @@ index = 1;
 setInterval(nextBackground, displayTime);
 
 // ************************************************************ Banner animation demo **************************************************
-const panel = document.getElementById("panel");
-const buttons = document.querySelectorAll(".dismissBtn");
-
-// Fade downward on initial render after half a second to make sure it is visible on page load
+// Fade downward on initial render
 window.addEventListener("load", () => {
   setTimeout(() => {
-    panel.classList.remove("hidden"); // triggers fade-down
-  }, 500); 
+    document.querySelectorAll(".panel").forEach(panel => {
+      panel.classList.remove("hidden"); 
+    });
+  }, 500);
 });
 
 // Button logic
+const buttons = document.querySelectorAll(".dismissBtn");
+
 buttons.forEach(btn => {
   btn.addEventListener("click", () => {
-    panel.classList.add("hidden"); // fade up
+    // Find the closest panel to this button
+    const panel = btn.closest(".panel");
+    if (!panel) return;
 
+    panel.classList.add("hidden"); 
+
+    // bring it back after 2s for demo purposes
     setTimeout(() => {
-      panel.classList.remove("hidden"); // fade back down after 2s
+      panel.classList.remove("hidden"); 
     }, 2000);
   });
 });
 
+
 //********************************************************** Border animation ************************************************* */
-const panel2 = document.querySelector('.glass-panel-danger');
+const danger_panel = document.querySelector('.glass-panel-danger');
+const warning_panel = document.querySelector('.glass-panel-warning');
+const info_panel = document.querySelector('.glass-panel-info');
+const success_panel = document.querySelector('.glass-panel-success');
 let angle = 0;
 
 function animateGradient() {
   angle += 1; // degrees per frame
-  panel2.style.setProperty('--angle', `${angle}deg`);
+  danger_panel.style.setProperty('--angle', `${angle}deg`);
+  warning_panel.style.setProperty('--angle', `${angle}deg`);
+  info_panel.style.setProperty('--angle', `${angle}deg`);
+  success_panel.style.setProperty('--angle', `${angle}deg`);
   requestAnimationFrame(animateGradient);
 }
 

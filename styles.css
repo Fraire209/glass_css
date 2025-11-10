@@ -16,7 +16,7 @@ h1, h2, h3 {
   line-height: 1.2;
   margin-top: 0.8em;
   margin-bottom: 0.4em;
-  color: white; 
+  color: white;
 }
 
 
@@ -545,7 +545,7 @@ p, button {
   border-radius: inherit;
   padding: 1.75px; 
   background: linear-gradient(
-    to bottom right,
+    var(--angle, 0deg),
     rgb(247, 184, 26) 0%,
     rgba(255, 255, 255, 0.35) 45%,
     rgba(255, 255, 255, 0.05) 55%,
@@ -584,7 +584,7 @@ p, button {
   border-radius: inherit;
   padding: 1.75px; 
   background: linear-gradient(
-    to bottom right,
+    var(--angle, 0deg),
     rgb(17, 9, 236) 0%,
     rgba(255, 255, 255, 0.35) 45%,
     rgba(255, 255, 255, 0.05) 55%,
@@ -623,7 +623,7 @@ p, button {
   border-radius: inherit;
   padding: 1.75px; 
   background: linear-gradient(
-    to bottom right,
+    var(--angle, 0deg),
     rgb(7, 182, 1) 0%,
     rgba(255, 255, 255, 0.35) 45%,
     rgba(255, 255, 255, 0.05) 55%,
@@ -1345,6 +1345,162 @@ p, button {
   backdrop-filter: blur(15px);     
   -webkit-backdrop-filter: blur(15px);
   transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------------- DISMISS BUTTON ----------------------------------------------------------------*/
+/* This is the class if only using red for all banners, simply called using btn-dismiss-danger */
+/* .btn-dismiss-danger {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 22px;          
+  height: 22px;          
+  border-radius: 50%;    
+  background: rgba(195, 0, 0, 0.15);
+  color: rgb(195, 0, 0);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition:
+    width 0.32s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    border-radius 0.25s ease,
+    background 0.25s ease;
+}
+
+.btn-dismiss-danger .symbol {
+  font-size: 12px;      
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.18s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.btn-dismiss-danger .label {
+  position: absolute;
+  opacity: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.btn-dismiss-danger:hover,
+.btn-dismiss-danger:focus {
+  width: 72px;              
+  border-radius: 40px;
+  justify-content: center;
+  background: rgba(195, 0, 0, 0.12);
+}
+
+.btn-dismiss-danger:hover .symbol,
+.btn-dismiss-danger:focus .symbol {
+  opacity: 0;
+}
+
+.btn-dismiss-danger:hover .label,
+.btn-dismiss-danger:focus .label {
+  opacity: 1;
+  z-index: 2;
+} */
+
+/* Base button styling plus banner colors, will have to use btn-dismiss + btn-(color) */
+.btn-dismiss {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition:
+    width 0.32s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    border-radius 0.25s ease,
+    background 0.25s ease;
+}
+
+.btn-dismiss .symbol {
+  font-size: 12px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.18s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.btn-dismiss .label {
+  position: absolute;
+  opacity: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.btn-dismiss:hover,
+.btn-dismiss:focus {
+  width: 72px;
+  border-radius: 40px;
+  justify-content: center;
+}
+
+.btn-dismiss:hover .symbol,
+.btn-dismiss:focus .symbol {
+  opacity: 0;
+}
+
+.btn-dismiss:hover .label,
+.btn-dismiss:focus .label {
+  opacity: 1;
+  z-index: 2;
+}
+
+.btn-danger {
+  background: rgba(195, 0, 0, 0.15);
+  color: rgb(195, 0, 0);
+}
+.btn-danger:hover {
+  background: rgba(195, 0, 0, 0.12);
+}
+
+.btn-warning {
+  background: rgba(255, 193, 7, 0.15);
+  color: rgb(255, 193, 7);
+}
+.btn-warning:hover {
+  background: rgba(255, 193, 7, 0.12);
+}
+
+.btn-info {
+  background: rgba(0, 123, 255, 0.15);
+  color: rgb(0, 123, 255);
+}
+.btn-info:hover {
+  background: rgba(0, 123, 255, 0.12);
+}
+
+.btn-success {
+  background: rgba(40, 167, 69, 0.15);
+  color: rgb(32, 135, 56);
+}
+.btn-success:hover {
+  background: rgba(40, 167, 70, 0.422);
 }
 
 /* --------------------------------------- TEXT COLORS ------------------------------------------- */
