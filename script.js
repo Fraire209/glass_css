@@ -1,7 +1,6 @@
 const images = [
   './images/pexels-rpnickson-2559941.jpg',
   './images/rbUCFdO.jpg',
-  'images/new-york-city-5k-3840x2160-11837.jpg',
   './images/windows-11-stock-4k-23-09-2024-1727154299-hd-wallpaper.jpg',
 ];
 
