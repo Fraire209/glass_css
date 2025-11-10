@@ -48,15 +48,20 @@ const buttons = document.querySelectorAll(".dismissBtn");
 
 buttons.forEach(btn => {
   btn.addEventListener("click", () => {
-    // Find the closest panel to this button
     const panel = btn.closest(".panel");
     if (!panel) return;
 
     panel.classList.add("hidden"); 
 
-    // bring it back after 2s for demo purposes
+    // Force Chrome to remove focus from button to show button back in closed state
+    btn.blur();
+
+    // Bring it back after 2s for demo purposes
     setTimeout(() => {
-      panel.classList.remove("hidden"); 
+      // Use requestAnimationFrame to force repaint
+      requestAnimationFrame(() => {
+        panel.classList.remove("hidden");
+      });
     }, 2000);
   });
 });
